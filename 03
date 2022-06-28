@@ -1,3 +1,6 @@
+# Write a function/functions that checks whether the sentence you get from the user is a **palindrome**. (Do not consider punctuation and special characters. Only consider "***alphanumeric***" characters.)
+
+
 def is_palindrome(string):
     return string[::-1].casefold() == string.casefold()
 

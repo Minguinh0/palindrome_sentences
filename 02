@@ -1,0 +1,21 @@
+# Write a function/functions that checks whether the sentence you get from the user is a **palindrome**. (Do not consider punctuation and special characters. Only consider "***alphanumeric***" characters.)
+
+sentence = input("Please enter a sentence: ").strip().strip('.').strip(',').strip('?').strip('!').strip("'").lower()
+words = sentence.split()
+new_sentence = []
+for word in words:
+    word = word.strip('.').strip(',').strip('?').strip('!').strip("'")
+    if "'" in word:
+        spells_word = word.split("'")
+        for spell in spells_word:
+            spell = spell.strip("'")
+        word = ''.join(spells_word)
+    new_sentence.append(word)
+
+new_sentence = ''.join(new_sentence)
+if new_sentence == new_sentence[::-1]:
+    print(f"'{sentence}' is a palindrome")
+else:
+    print(f"'{sentence}' is a not palindrome")
+
+print(new_sentence)
